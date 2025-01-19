@@ -7,26 +7,35 @@ url: "https://cloudcommand.org"
 twitter_username: Ollivierre_A
 github_username: aollivierre
 
+# Theme settings
 theme: minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
 
-# Additional settings
-show_excerpts: true
-header_pages:
-  - about.md
-  - projects.md
+# Comments settings
+disqus:
+  shortname: cloudcommand # Replace with your Disqus shortname
 
-# Build settings
+# Syntax highlighting
 markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 
 # Header pages
 header_pages:
   - about.md
   - categories/index.md
   - tags/index.md
+
+# Social links
+social_links:
+  twitter: Ollivierre_A
+  github: aollivierre
+  linkedin: abdullah-ollivierre
 
 # Defaults for posts
 defaults:
@@ -37,3 +46,4 @@ defaults:
     values:
       layout: post
       author: Abdullah Ollivierre
+      comments: true # Enable comments by default
