@@ -207,7 +207,37 @@ Your post content here...
 
 ## Common Issues and Solutions
 
-1. **Docker Permission Issues**:
+1. **Initial Git Setup on Ubuntu VM**:
+```bash
+# Configure Git with your GitHub details
+git config --global user.email "your-github-email@example.com"
+git config --global user.name "your-github-username"
+```
+
+2. **Handling Git Merge Conflicts During Initial Setup**:
+```bash
+# Set merge strategy
+git config pull.rebase false
+
+# Backup current work
+mkdir -p ../blog-backup
+cp -r * ../blog-backup/
+
+# Pull with merge strategy
+git pull origin main --allow-unrelated-histories
+
+# Force our version if there are conflicts
+git checkout --ours .
+
+# Add and commit changes
+git add .
+git commit -m "Merged and setup Jekyll blog with custom domain"
+
+# Push to main
+git push origin main
+```
+
+3. **Docker Permission Issues**:
    - Solution: Add user to docker group and run `newgrp docker`
 
 2. **Jekyll Port Already in Use**:
